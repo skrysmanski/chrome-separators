@@ -1,0 +1,2 @@
+# Disable git's auto eol handling for all files.
+* -text
