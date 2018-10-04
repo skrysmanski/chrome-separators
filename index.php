@@ -105,7 +105,8 @@ $isHorz = (@$_GET['t'] == 'horz');
     <p>
       Made by <a href="https://www.twitter.com/manski83" target="_blank">@manski83</a>
       (on <a href="https://github.com/skrysmanski/chrome-separators" target="_blank">GitHub</a>),<br>
-      based on work by <a href="https://www.twitter.com/VorteXLP" target="_blank">@VorteXLP</a><br>
+      based on work by <a href="https://www.twitter.com/VorteXLP" target="_blank">@VorteXLP</a>
+      <br/><br/>
       <a href="https://twitter.com/share" class="twitter-share-button" data-text="Do you want separators in your Chrome bookmarks? Check this out! #tweettip" data-count="horizontal" data-via="manski83" data-url="https://separator.mayastudios.com/">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
     </p>
   </div>
