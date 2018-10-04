@@ -17,7 +17,7 @@ $isHorz = (@$_GET['t'] == 'horz');
 <body>
 <div id="outer">
   <div id="inner">
-        <div id="alert-container"></div>
+    <div id="alert-container"></div>
 
     I'm a <b><?php echo $isHorz ? 'horizontal' : 'vertical'; ?></b> separator.
     Drag <a class="me" href="" title="Drag me!"><?php echo $isHorz ? '───────────' : ''; ?></a> to your bookmarks <em><?php echo $isHorz ? 'folders' : 'toolbar'; ?></em>.<br><br>
@@ -36,15 +36,18 @@ $isHorz = (@$_GET['t'] == 'horz');
   </div>
 </div>
 
-    <script>
-        const detectedBrowser = browserDetect();
-        if (detectedBrowser.name === "chrome" && detectedBrowser.versionNumber >= 69 && detectedBrowser.versionNumber < 70) {
-            $('#alert-container').html(`
+  <script>
+    const detectedBrowser = browserDetect();
+
+    // Chrome 69 bug
+    if (detectedBrowser.name === "chrome" && detectedBrowser.versionNumber >= 69 && detectedBrowser.versionNumber < 70) {
+      $('#alert-container').html(`
 <div class="alert alert-warning" role="alert">
   Unfortunately, due to <a href="https://productforums.google.com/forum/#!topic/chrome/sHG5ntLrdwQ" target="_blank">a bug in Chrome 69</a> you can't drag the "me" button to your bookmarks toolbar.
 </div>`);
-        }
-    </script>
+    }
+
+  </script>
 </body>
 
 </html>
