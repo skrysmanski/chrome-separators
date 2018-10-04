@@ -78,6 +78,20 @@ $isHorz = (@$_GET['t'] == 'horz');
           text-decoration:none;
         }
 
+        .alert {
+            padding: .75rem 1.25rem;
+            margin-bottom: 1rem;
+            border: 2px solid transparent;
+            border-radius: .25rem;
+            font-size: 70%;
+        }
+
+        .alert-warning {
+            color: #856404;
+            background-color: #fff3cd;
+            border-color: #ffeeba;
+        }
+
         .twitter-share-button {
             opacity:0.5;
             margin-left:9px;
@@ -90,11 +104,21 @@ $isHorz = (@$_GET['t'] == 'horz');
 
     </style>
 
+    <script src="node_modules/browser-detect/dist/browser-detect.umd.js"></script>
 </head>
 
 <body>
 <div id="outer">
+    <script>
+        const detectedBrowser = browserDetect();
+        if (detectedBrowser.name === "chrome") {
+        }
+        console.log(detectedBrowser);
+    </script>
   <div id="inner">
+  <div class="alert alert-warning" role="alert">
+  Unfortunately, due to <a href="https://productforums.google.com/forum/#!topic/chrome/sHG5ntLrdwQ" target="_blank">a bug in Chrome 69</a> you can't drag the "me" button to your bookmarks toolbar.
+</div>
     I'm a <b><?php echo $isHorz ? 'horizontal' : 'vertical'; ?></b> separator.
     Drag <a class="me" href="" title="Drag me!"><?php echo $isHorz ? '───────────' : ''; ?></a> to your bookmarks <em><?php echo $isHorz ? 'folders' : 'toolbar'; ?></em>.<br><br>
 
