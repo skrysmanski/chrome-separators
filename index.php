@@ -104,21 +104,15 @@ $isHorz = (@$_GET['t'] == 'horz');
 
     </style>
 
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/browser-detect/dist/browser-detect.umd.js"></script>
 </head>
 
 <body>
 <div id="outer">
-    <script>
-        const detectedBrowser = browserDetect();
-        if (detectedBrowser.name === "chrome") {
-        }
-        console.log(detectedBrowser);
-    </script>
   <div id="inner">
-  <div class="alert alert-warning" role="alert">
-  Unfortunately, due to <a href="https://productforums.google.com/forum/#!topic/chrome/sHG5ntLrdwQ" target="_blank">a bug in Chrome 69</a> you can't drag the "me" button to your bookmarks toolbar.
-</div>
+        <div id="alert-container"></div>
+        
     I'm a <b><?php echo $isHorz ? 'horizontal' : 'vertical'; ?></b> separator.
     Drag <a class="me" href="" title="Drag me!"><?php echo $isHorz ? '───────────' : ''; ?></a> to your bookmarks <em><?php echo $isHorz ? 'folders' : 'toolbar'; ?></em>.<br><br>
 
@@ -135,6 +129,16 @@ $isHorz = (@$_GET['t'] == 'horz');
     </p>
   </div>
 </div>
+
+    <script>
+        const detectedBrowser = browserDetect();
+        if (detectedBrowser.name === "chrome" && detectedBrowser.versionNumber >= 69 && detectedBrowser.versionNumber < 70) {
+            $('#alert-container').html(`
+<div class="alert alert-warning" role="alert">
+  Unfortunately, due to <a href="https://productforums.google.com/forum/#!topic/chrome/sHG5ntLrdwQ" target="_blank">a bug in Chrome 69</a> you can't drag the "me" button to your bookmarks toolbar.
+</div>`);
+        }
+    </script>
 </body>
 
 </html>
