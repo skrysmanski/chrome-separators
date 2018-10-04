@@ -103,9 +103,9 @@ $isHorz = (@$_GET['t'] == 'horz');
     <br><br><b>:)</b><br><br><br>
 
     <p>
-      Made by <a href="http://www.twitter.com/manski83" target="_blank">@manski83</a>,<br>
-      based on work by <a href="http://www.twitter.com/VorteXLP" target="_blank">@VorteXLP</a><br>
-      <a href="http://twitter.com/share" class="twitter-share-button" data-text="Do you want separators in your Chrome bookmarks? Check this out! #tweettip" data-count="horizontal" data-via="manski83" data-url="http://separator.mayastudios.com/">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      Made by <a href="https://www.twitter.com/manski83" target="_blank">@manski83</a>,<br>
+      based on work by <a href="https://www.twitter.com/VorteXLP" target="_blank">@VorteXLP</a><br>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-text="Do you want separators in your Chrome bookmarks? Check this out! #tweettip" data-count="horizontal" data-via="manski83" data-url="https://separator.mayastudios.com/">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
     </p>
   </div>
 </div>
