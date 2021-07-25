@@ -6,7 +6,9 @@ $isHorz = (@$_GET['t'] == 'horz');
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Chrome Bookmarks Separator</title>
-  <link rel="icon" href="<?php echo $isHorz ? 'horz' : 'vert'; ?>-favicon.ico" type="image/x-icon">
+
+  <!-- See: https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/ -->
+  <link rel="icon" href="favicon-<?php echo $isHorz ? 'horz' : 'vert'; ?>.svg" type="image/svg+xml">
 
   <link rel="stylesheet" href="index.css" />
 
