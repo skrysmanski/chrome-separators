@@ -1,5 +1,6 @@
 <!doctype html>
 <?php
+$VERSION = '1.1';
 $isHorz = (@$_GET['t'] == 'horz');
 ?>
 <html>
@@ -28,7 +29,7 @@ $isHorz = (@$_GET['t'] == 'horz');
       <br><br><b>:)</b><br><br><br>
 
       <p>
-        Made by <a href="https://www.twitter.com/manski83" target="_blank">@manski83</a>
+        Version <?php echo $VERSION; ?> made by <a href="https://www.twitter.com/manski83" target="_blank">@manski83</a>
         (on <a href="https://github.com/skrysmanski/chrome-separators" target="_blank">GitHub</a>),<br>
         based on work by <a href="https://www.twitter.com/VorteXLP" target="_blank">@VorteXLP</a>
         <br/><br/>
