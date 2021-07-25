@@ -1,2 +1,40 @@
-# Disable git's auto eol handling for all files.
+# Prevent git from messing around with line endings.
 * -text
+
+# Store binary files in git-lfs
+**/*.exe filter=lfs diff=lfs merge=lfs -text
+**/*.dll filter=lfs diff=lfs merge=lfs -text
+
+**/*.gif filter=lfs diff=lfs merge=lfs -text
+**/*.png filter=lfs diff=lfs merge=lfs -text
+**/*.jpg filter=lfs diff=lfs merge=lfs -text
+**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+**/*.tif filter=lfs diff=lfs merge=lfs -text
+**/*.bmp filter=lfs diff=lfs merge=lfs -text
+**/*.ico filter=lfs diff=lfs merge=lfs -text
+**/*.cur filter=lfs diff=lfs merge=lfs -text
+
+**/*.avi filter=lfs diff=lfs merge=lfs -text
+**/*.mpg filter=lfs diff=lfs merge=lfs -text
+**/*.mpeg filter=lfs diff=lfs merge=lfs -text
+
+**/*.wav filter=lfs diff=lfs merge=lfs -text
+**/*.mp3 filter=lfs diff=lfs merge=lfs -text
+**/*.m4a filter=lfs diff=lfs merge=lfs -text
+
+**/*.zip filter=lfs diff=lfs merge=lfs -text
+**/*.gz filter=lfs diff=lfs merge=lfs -text
+
+**/*.ttf filter=lfs diff=lfs merge=lfs -text
+
+**/*.doc filter=lfs diff=lfs merge=lfs -text
+**/*.docx filter=lfs diff=lfs merge=lfs -text
+**/*.xls filter=lfs diff=lfs merge=lfs -text
+**/*.xlsx filter=lfs diff=lfs merge=lfs -text
+**/*.ppt filter=lfs diff=lfs merge=lfs -text
+**/*.pptx filter=lfs diff=lfs merge=lfs -text
+**/*.pdf filter=lfs diff=lfs merge=lfs -text
+**/*.xps filter=lfs diff=lfs merge=lfs -text
+**/*.rtf filter=lfs diff=lfs merge=lfs -text
+
+**/*.bin filter=lfs diff=lfs merge=lfs -text

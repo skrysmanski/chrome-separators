@@ -1,1 +1,23 @@
+#
+# This file list paths that are ignored by git.
+#
+# Tutorial: https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+#
+# GitIgnore files for various project types: https://github.com/github/gitignore
+#
+
+
+#
+# Common ignores
+#
+
+# Log files
+*.log
+# Temporary files
+*.tmp
+
+
+#
+# Repository custom ignores
+#
 node_modules
