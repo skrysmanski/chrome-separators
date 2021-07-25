@@ -1,15 +1,8 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.185.0/containers/php
+// For format details, see https://aka.ms/devcontainer.json.
 {
 	"name": "PHP",
 	"build": {
 		"dockerfile": "Dockerfile",
-		"args": {
-			// Update VARIANT to pick a PHP version: 8, 8.0, 7, 7.4, 7.3
-			"VARIANT": "8.0",
-			"INSTALL_NODE": "false",
-			//"NODE_VERSION": "lts/*",
-		}
 	},
 
 	// Set *default* container specific settings.json values on container create.
