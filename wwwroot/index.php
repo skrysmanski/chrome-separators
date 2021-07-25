@@ -12,8 +12,6 @@ $isHorz = (@$_GET['t'] == 'horz');
   <link rel="icon" href="favicon-<?php echo $isHorz ? 'horz' : 'vert'; ?>.svg" type="image/svg+xml">
 
   <link rel="stylesheet" href="index.css" />
-
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 
 <body>
