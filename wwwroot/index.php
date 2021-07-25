@@ -39,7 +39,19 @@ $isHorz = (@$_GET['t'] == 'horz');
           based on work by <a href="https://www.twitter.com/VorteXLP" target="_blank">@VorteXLP</a>
         </p>
         <p>
-          <a href="https://twitter.com/share" class="twitter-share-button" data-text="Do you want separators in your Chrome bookmarks? Check this out! #tweettip" data-count="horizontal" data-via="manski83" data-url="https://separator.mayastudios.com/">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+          <!-- See:
+               - https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview
+               - https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/guides/parameter-reference1
+           -->
+          <a class="twitter-share-button"
+             href="https://twitter.com/intent/tweet"
+             data-text="Do you want separators in your Chrome bookmarks? Check this out!"
+             data-hashtags="tweettip"
+             data-via="manski83"
+             data-url="https://separator.mayastudios.com">
+            Tweet
+          </a>
+          <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
         </p>
         </p>
       </div>
