@@ -7,8 +7,8 @@
 		"args": {
 			// Update VARIANT to pick a PHP version: 8, 8.0, 7, 7.4, 7.3
 			"VARIANT": "8.0",
-			"INSTALL_NODE": "true",
-			"NODE_VERSION": "lts/*"
+			"INSTALL_NODE": "false",
+			//"NODE_VERSION": "lts/*",
 		}
 	},
 
