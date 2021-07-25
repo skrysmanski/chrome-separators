@@ -1,0 +1,35 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.185.0/containers/php
+{
+	"name": "PHP",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			// Update VARIANT to pick a PHP version: 8, 8.0, 7, 7.4, 7.3
+			"VARIANT": "7",
+			"INSTALL_NODE": "true",
+			"NODE_VERSION": "lts/*"
+		}
+	},
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"php.validate.executablePath": "/usr/local/bin/php"
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"editorconfig.editorconfig",
+		"davidanson.vscode-markdownlint",
+		"streetsidesoftware.code-spell-checker",
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [8080],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "yarn install --cwd=src",
+
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}
