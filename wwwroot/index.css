@@ -30,7 +30,9 @@ body {
     margin-left: -250px;  /* =>  width / 2  */
     top: -240px;          /* =>  height / 2  */
     left: 50%;
+}
 
+#inner p {
     font-size:29px;
     color:#535559;
     text-align:center;
@@ -56,32 +58,26 @@ body {
     text-decoration:none;
 }
 
+span.target-name {
+    font-weight: bold;
+}
+
 #inner b, #inner a {
     font-weight:bold;
     color:#335fa1;
 }
 
-p {
+#inner div.footer {
+    margin-top: 80px;
+}
+
+#inner div.footer > p {
     color:#a4a4a4;
     font-size:13px;
 }
 
-p a {
+#inner div.footer a {
   text-decoration:none;
-}
-
-.alert {
-    padding: .75rem 1.25rem;
-    margin-bottom: 1rem;
-    border: 2px solid transparent;
-    border-radius: .25rem;
-    font-size: 70%;
-}
-
-.alert-warning {
-    color: #856404;
-    background-color: #fff3cd;
-    border-color: #ffeeba;
 }
 
 .twitter-share-button {
