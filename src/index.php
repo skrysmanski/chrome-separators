@@ -11,7 +11,6 @@ $isHorz = (@$_GET['t'] == 'horz');
   <link rel="stylesheet" href="index.css" />
 
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="node_modules/browser-detect/dist/browser-detect.umd.js"></script>
 </head>
 
 <body>
@@ -35,19 +34,6 @@ $isHorz = (@$_GET['t'] == 'horz');
       </p>
     </div>
   </div>
-
-  <script>
-    const detectedBrowser = browserDetect();
-
-    // Chrome 69 bug
-    if (detectedBrowser.name === "chrome" && detectedBrowser.versionNumber >= 69 && detectedBrowser.versionNumber < 70) {
-      $('#alert-container').html(`
-<div class="alert alert-warning" role="alert">
-  Unfortunately, due to <a href="https://productforums.google.com/forum/#!topic/chrome/sHG5ntLrdwQ" target="_blank">a bug in Chrome 69</a> you can't drag the "me" button to your bookmarks toolbar.
-</div>`);
-    }
-
-  </script>
 </body>
 
 </html>
