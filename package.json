@@ -3,8 +3,5 @@
 	"dependencies": {
 		"browser-detect": "^0.2.28",
 		"jquery": "^3.6.0"
-	},
-	"devDependencies": {
-		"yarn-upgrade-all": "^0.5.4"
 	}
 }
