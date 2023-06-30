@@ -53,7 +53,6 @@ $isHorz = (@$_GET['t'] == 'horz');
           </a>
           <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
         </p>
-        </p>
       </div>
     </div>
   </div>
