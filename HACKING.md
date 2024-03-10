@@ -12,7 +12,7 @@ This will give you a [development Docker container](https://code.visualstudio.co
 
 ## Running the Development Web Server
 
-You can then start a development web server by calling the following via the **integrated terminal** in VSCode. (In the "Terminal" window, simply click the "+" button.)
+You can then start a development web server by calling the following via the **integrated terminal** in VSCode. (This should start automatically but if it isn't, simply click the "+" button in the "Terminal" window.)
 
 ```bash
 ./start-server.sh
