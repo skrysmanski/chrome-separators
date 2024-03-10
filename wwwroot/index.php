@@ -1,7 +1,7 @@
 <!doctype html>
 <?php
 $VERSION = '1.2';
-$isHorz = (@$_GET['t'] == 'horz');
+$isHorz = isset($_GET['horz']) || @$_GET['t'] == 'horz';
 ?>
 <html lang="en">
 <head>
@@ -36,12 +36,12 @@ $isHorz = (@$_GET['t'] == 'horz');
 
       <p>
         I'm a <b><?php echo $isHorz ? '— horizontal' : '| vertical'; ?></b> separator.
-        Drag <a class="me" href="<?php echo $isHorz ? "/?t=horz&tag=$randomId" : "/?tag=$randomId"; ?>" title="Drag me!"><?php echo $isHorz ? '───────────' : ''; ?></a><br/>
+        Drag <a class="me" href="<?php echo $isHorz ? "/?horz&tag=$randomId" : "/?vert&tag=$randomId"; ?>" title="Drag me!"><?php echo $isHorz ? '───────────' : ''; ?></a><br/>
         to your bookmarks <span class="target-name"><?php echo $isHorz ? 'folder' : 'toolbar'; ?></span>.
       </p>
 
       <p>
-        For a <b><?php echo $isHorz ? '| vertical' : '— horizontal'; ?></b> separator, click <a href="<?php echo $isHorz ? '/' : '/?t=horz'; ?>">here</a>.
+        For a <b><?php echo $isHorz ? '| vertical' : '— horizontal'; ?></b> separator, click <a href="<?php echo $isHorz ? '/?vert' : '/?horz'; ?>">here</a>.
       </p>
 
       <p>
