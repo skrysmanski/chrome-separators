@@ -1,5 +1,7 @@
 # How to work on this project
 
+## Setup
+
 The recommended development workflow is:
 
 1. Use **Visual Studio Code** and **Docker Desktop**
@@ -8,6 +10,18 @@ The recommended development workflow is:
 
 This will give you a [development Docker container](https://code.visualstudio.com/docs/remote/containers) that contains all necessary tools (PHP, Node, Yarn) and that can be edited directly from within Visual Studio Code.
 
-You can then start a webserver at port 8080 by calling `start-server.sh` via the **integrated terminal** in VSCode.
+## Running the Development Web Server
+
+You can then start a development web server by calling the following via the **integrated terminal** in VSCode. (In the "Terminal" window, simply click the "+" button.)
+
+```bash
+./start-server.sh
+```
+
+The web site is then reachable via: <http://localhost:8080>
+
+To stop the web server again, hit `Ctrl + C`.
+
+## Rebuild Dev Container
 
 To rebuild the container, open the Command Palette and choose **Remote-Containers: Rebuild Container**.
