@@ -19,28 +19,29 @@ $isHorz = (@$_GET['t'] == 'horz');
     <div id="inner">
 
       <?php
-      function generateRandomHashtag($length = 10): string {
+      function generateRandomId($length = 10): string {
         $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        $hashtag = '#';
+
+        $id = '';
 
         for ($i = 0; $i < $length; $i++) {
-          $hashtag .= $characters[rand(0, strlen($characters) - 1)];
+          $id .= $characters[rand(0, strlen($characters) - 1)];
         }
 
-        return $hashtag;
+        return $id;
       }
 
-      $randomHashtag = generateRandomHashtag();
+      $randomId = generateRandomId();
       ?>
 
       <p>
-        I'm a <b><?php echo $isHorz ? 'horizontal' : 'vertical'; ?></b> separator.
-        Drag <a class="me" href="/<?php echo $randomHashtag; ?>" title="Drag me!"><?php echo $isHorz ? '───────────' : ''; ?></a><br/>
-        to your bookmarks <span class="target-name"><?php echo $isHorz ? 'folders' : 'toolbar'; ?></span>.
+        I'm a <b><?php echo $isHorz ? '— horizontal' : '| vertical'; ?></b> separator.
+        Drag <a class="me" href="<?php echo $isHorz ? "/?t=horz&tag=$randomId" : "/?tag=$randomId"; ?>" title="Drag me!"><?php echo $isHorz ? '───────────' : ''; ?></a><br/>
+        to your bookmarks <span class="target-name"><?php echo $isHorz ? 'folder' : 'toolbar'; ?></span>.
       </p>
 
       <p>
-        For a <b><?php echo $isHorz ? 'vertical' : 'horizontal'; ?></b> separator, click <a href="<?php echo $isHorz ? 'index.php' : 'index.php?t=horz'; ?>">here</a>.
+        For a <b><?php echo $isHorz ? '| vertical' : '— horizontal'; ?></b> separator, click <a href="<?php echo $isHorz ? '/' : '/?t=horz'; ?>">here</a>.
       </p>
 
       <p>
