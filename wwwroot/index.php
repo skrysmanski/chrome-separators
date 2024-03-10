@@ -49,24 +49,9 @@ $isHorz = (@$_GET['t'] == 'horz');
 
       <div class="footer">
         <p>
-          Version <?php echo $VERSION; ?> made by <a href="https://www.twitter.com/manski83" target="_blank">@manski83</a>
-          (on <a href="https://github.com/skrysmanski/chrome-separators" target="_blank">GitHub</a>),<br>
-          based on work by <a href="https://www.twitter.com/VorteXLP" target="_blank">@VorteXLP</a>
-        </p>
-        <p>
-          <!-- See:
-               - https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview
-               - https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/guides/parameter-reference1
-           -->
-          <a class="twitter-share-button"
-             href="https://twitter.com/intent/tweet"
-             data-text="Do you want separators in your Chrome bookmarks? Check this out!"
-             data-hashtags="tweettip"
-             data-via="manski83"
-             data-url="https://separator.mayastudios.com">
-            Tweet
-          </a>
-          <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+          Version <?php echo $VERSION; ?><br/>
+          Made by <a href="https://hachyderm.io/@manski" target="_blank">@manski</a><br/>
+          (on <a href="https://github.com/skrysmanski/chrome-separators" target="_blank">GitHub</a>)
         </p>
       </div>
     </div>
