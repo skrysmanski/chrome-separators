@@ -1,3 +1,3 @@
 #!/bin/sh -e
 
-php -S 0.0.0.0:8080 -t wwwroot
+apache2ctl -D FOREGROUND -c "ServerName localhost"
