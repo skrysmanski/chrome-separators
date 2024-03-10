@@ -1,0 +1,92 @@
+#
+# GitHub Actions workflow: Uploads current version it to the target server.
+#
+# For more details on workflows, see README.md.
+#
+
+name: Deploy Site
+
+# When to run this workflow
+#
+# See: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+# See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+#
+# TIP: Don't use "schedule" triggers as this will cause the workflow to be disabled after 60 days of inactivity
+#   (and afterward the workflow must be manually reenabled).
+on:
+  # Trigger the workflow on push to the main branch (deploy to production).
+  push:
+    branches:
+      - main
+  # Allow manual run of this workflow (https://docs.github.com/en/actions/using-workflows/manually-running-a-workflow)
+  workflow_dispatch:
+
+# Permissions for GITHUB_TOKEN for this workflow.
+#
+# See: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token
+#
+# NOTE: Because we run with minimal permissions, we use "@vX" (instead of "@hash") for non-GitHub steps below.
+#   Usually you would use "@hash" as a security measure to pin a specific version. However, since we run with
+#   minimal permissions here, malicious code can't do much harm (most likely). For more details, see:
+#   https://blog.gitguardian.com/github-actions-security-cheat-sheet/#use-specific-action-version-tags
+permissions:
+  contents: read
+
+# NOTE: Jobs run in parallel by default.
+# https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow
+jobs:
+  deploy:
+
+    # Name the job
+    name: Deploy
+
+    # Set the type of machine to run on
+    # See: https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+    runs-on: ubuntu-latest
+
+    steps:
+
+      ###########################################################################
+      #
+      # Setup Steps
+      #
+      ###########################################################################
+
+      # See: https://github.com/marketplace/actions/checkout
+      - name: Clone Git repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+
+      ###########################################################################
+      #
+      # Deploy Steps
+      #
+      ###########################################################################
+
+      # See: https://github.com/marketplace/actions/ftp-deploy
+      - name: Deploy folder 'htdocs'
+        uses: SamKirkland/FTP-Deploy-Action@8e83cea8672e3fbcbb9fdafff34debf6ae4c5f65 # v4.3.5
+        with:
+          # See: https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions
+          # IMPORTANT: Secrets are NOT available for pull requests from forked repositories!!!
+          #   Meaning: We don't need to fear that a malicious pull request will overwrite our web site.
+          #   See: https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#using-secrets-in-a-workflow
+          server: ${{ secrets.ftp_server }}
+          username: ${{ secrets.ftp_username }}
+          password: ${{ secrets.ftp_password }}
+
+          # Use an encrypted FTP connection.
+          protocol: ftps
+
+          #log-level: verbose
+
+          # NOTE: This action actually compares file hashes to determine if a file needs to be uploaded.
+          local-dir: './wwwroot/'
+          server-dir: ./wwwroot/
+          state-name: ../sync-state.json
+
+          exclude: |
+            **/.git*
+            **/.git*/**
