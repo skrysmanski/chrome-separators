@@ -59,4 +59,28 @@ $isHorz = isset($_GET['horz']) || @$_GET['t'] == 'horz';
   </div>
 </body>
 
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    if(typeof crypto.randomUUID === 'undefined') {
+      return;
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const mode = (urlParams.get('horz') !== null) ? 'horz' : 'vert';
+    const link = document.querySelector(".me");
+
+    function refreshHash() {
+      let key = crypto.randomUUID();
+      link.setAttribute('href', `?${mode}` + "#" + key);
+      window.location.hash = key;
+    }
+
+    refreshHash();
+
+    window.setInterval(() => {
+      refreshHash();
+    }, 1000);
+  });
+</script>
+
 </html>
