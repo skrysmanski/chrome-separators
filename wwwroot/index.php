@@ -18,22 +18,6 @@ $isHorz = isset($_GET['horz']) || @$_GET['t'] == 'horz';
   <div id="outer">
     <div id="inner">
 
-      <?php
-      function generateRandomId($length = 10): string {
-        $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-
-        $id = '';
-
-        for ($i = 0; $i < $length; $i++) {
-          $id .= $characters[rand(0, strlen($characters) - 1)];
-        }
-
-        return $id;
-      }
-
-      //$randomId = generateRandomId();
-      ?>
-
       <p>
         I'm a <b><?php echo $isHorz ? '— horizontal' : '| vertical'; ?></b> separator.
         Drag <a class="me" href="<?php echo $isHorz ? "/?horz" : "/?vert"; ?>" title="Drag me!"><?php echo $isHorz ? '───────────' : ''; ?></a><br/>
