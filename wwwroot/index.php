@@ -70,16 +70,14 @@ $isHorz = isset($_GET['horz']) || @$_GET['t'] == 'horz';
     const link = document.querySelector(".me");
 
     function refreshHash() {
-      let key = crypto.randomUUID();
-      link.setAttribute('href', `?${mode}` + "#" + key);
+      const key = crypto.randomUUID();
+      link.setAttribute('href', `?${mode}#${key}`);
       window.location.hash = key;
     }
 
     refreshHash();
 
-    window.setInterval(() => {
-      refreshHash();
-    }, 1000);
+    window.setInterval(refreshHash, 1000);
   });
 </script>
 
