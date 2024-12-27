@@ -56,7 +56,9 @@ $isHorz = isset($_GET['horz']) || @$_GET['t'] == 'horz';
     function refreshHash() {
       const key = crypto.randomUUID();
       link.setAttribute('href', `?${mode}#${key}`);
-      window.location.hash = key;
+      // NOTE: We use "location.replace()" here - instead of "location.hash" - so that
+      //   the browser doesn't create a new browser history item for each new key.
+      window.location.replace(`#${key}`);
     }
 
     refreshHash();
