@@ -1,5 +1,8 @@
 <?php
 $VERSION = '1.2';
+
+header('X-Content-Type-Options: nosniff');
+
 $isHorizontal = isset($_GET['horz']);
 if (!$isHorizontal && !isset($_GET['vert'])) {
   // If neither "?horz" nor "?vert", select "?vert" explicitly - or else the icon on the user's bookmark bar
@@ -11,11 +14,13 @@ if (!$isHorizontal && !isset($_GET['vert'])) {
 <!doctype html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Chrome Bookmarks Separator</title>
 
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <!-- See: https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/ -->
-  <link rel="icon" href="favicon-<?php echo $isHorizontal ? 'horz' : 'vert'; ?>.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-<?php echo $isHorizontal ? 'horz' : 'vert'; ?>.svg" type="image/svg+xml" />
 
   <link rel="stylesheet" href="index.css" />
 </head>
