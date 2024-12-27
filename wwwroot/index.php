@@ -58,6 +58,10 @@ $isHorz = isset($_GET['horz']) || @$_GET['t'] == 'horz';
       link.setAttribute('href', `?${mode}#${key}`);
       // NOTE: We use "location.replace()" here - instead of "location.hash" - so that
       //   the browser doesn't create a new browser history item for each new key.
+      // NOTE 2: We need to change the current page's location or else the browser won't pre-cache
+      //   the page's favicon. I.e. without this, if the user drags the "me" button to their
+      //   bookmarks bar, the bookmark's icon will be a generic icon - and not the actual favicon
+      //   of this page (until the user clicks on the bookmark).
       window.location.replace(`#${key}`);
     }
 
