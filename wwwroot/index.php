@@ -1,7 +1,7 @@
 <!doctype html>
 <?php
 $VERSION = '1.2';
-$isHorz = isset($_GET['horz']);
+$isHorizontal = isset($_GET['horz']);
 ?>
 <html lang="en">
 <head>
@@ -9,7 +9,7 @@ $isHorz = isset($_GET['horz']);
   <title>Chrome Bookmarks Separator</title>
 
   <!-- See: https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/ -->
-  <link rel="icon" href="favicon-<?php echo $isHorz ? 'horz' : 'vert'; ?>.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-<?php echo $isHorizontal ? 'horz' : 'vert'; ?>.svg" type="image/svg+xml">
 
   <link rel="stylesheet" href="index.css" />
 </head>
@@ -19,13 +19,13 @@ $isHorz = isset($_GET['horz']);
     <div id="inner">
 
       <p>
-        I'm a <b><?php echo $isHorz ? '— horizontal' : '| vertical'; ?></b> separator.
-        Drag <a class="me" href="<?php echo $isHorz ? "/?horz" : "/?vert"; ?>" title="Drag me!"><?php echo $isHorz ? '───────────' : ''; ?></a><br/>
-        to your bookmarks <span class="target-name"><?php echo $isHorz ? 'folder' : 'toolbar'; ?></span>.
+        I'm a <b><?php echo $isHorizontal ? '— horizontal' : '| vertical'; ?></b> separator.
+        Drag <a class="me" href="<?php echo $isHorizontal ? "/?horz" : "/?vert"; ?>" title="Drag me!"><?php echo $isHorizontal ? '───────────' : ''; ?></a><br/>
+        to your bookmarks <span class="target-name"><?php echo $isHorizontal ? 'folder' : 'toolbar'; ?></span>.
       </p>
 
       <p>
-        For a <b><?php echo $isHorz ? '| vertical' : '— horizontal'; ?></b> separator, click <a href="<?php echo $isHorz ? '/?vert' : '/?horz'; ?>">here</a>.
+        For a <b><?php echo $isHorizontal ? '| vertical' : '— horizontal'; ?></b> separator, click <a href="<?php echo $isHorizontal ? '/?vert' : '/?horz'; ?>">here</a>.
       </p>
 
       <p>
