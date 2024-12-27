@@ -1,7 +1,7 @@
 <!doctype html>
 <?php
 $VERSION = '1.2';
-$isHorz = isset($_GET['horz']) || @$_GET['t'] == 'horz';
+$isHorz = isset($_GET['horz']);
 ?>
 <html lang="en">
 <head>
