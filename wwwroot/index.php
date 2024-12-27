@@ -67,7 +67,11 @@ $isHorz = isset($_GET['horz']) || @$_GET['t'] == 'horz';
 
     refreshHash();
 
-    window.setInterval(refreshHash, 1000);
+    link.addEventListener("mousedown", (event) => {
+      if (event.button === 0) {
+        refreshHash();
+      }
+    });
   });
 </script>
 
