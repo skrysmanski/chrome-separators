@@ -14,11 +14,7 @@ name: Deploy Site
 # TIP: Don't use "schedule" triggers as this will cause the workflow to be disabled after 60 days of inactivity
 #   (and afterward the workflow must be manually reenabled).
 on:
-  # Trigger the workflow on push to the main branch (deploy to production).
-  push:
-    branches:
-      - main
-  # Allow manual run of this workflow (https://docs.github.com/en/actions/using-workflows/manually-running-a-workflow)
+  # We only run the workflow manually whenever there's a new version.
   workflow_dispatch:
 
 # Permissions for GITHUB_TOKEN for this workflow.
