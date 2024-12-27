@@ -53,16 +53,22 @@ $isHorz = isset($_GET['horz']) || @$_GET['t'] == 'horz';
     const mode = (urlParams.get('horz') !== null) ? 'horz' : 'vert';
     const link = document.querySelector(".me");
 
+    // This method exists so that this site can be used for bookmarks in Edge. Edge doesn't allow the user
+    // to place multiple bookmarks to the same URL into the same bookmarks folder (unlike Chrome which allows
+    // this). So, to work around this problem, this method changes the bookmark URL so that no two separator
+    // bookmarks have the same URL.
     function refreshHash() {
-      const key = crypto.randomUUID();
-      link.setAttribute('href', `?${mode}#${key}`);
+      const randomKey = crypto.randomUUID();
+
+      link.setAttribute('href', `?${mode}#${randomKey}`);
+
       // NOTE: We use "location.replace()" here - instead of "location.hash" - so that
       //   the browser doesn't create a new browser history item for each new key.
       // NOTE 2: We need to change the current page's location or else the browser won't pre-cache
       //   the page's favicon. I.e. without this, if the user drags the "me" button to their
       //   bookmarks bar, the bookmark's icon will be a generic icon - and not the actual favicon
       //   of this page (until the user clicks on the bookmark).
-      window.location.replace(`#${key}`);
+      window.location.replace(`#${randomKey}`);
     }
 
     refreshHash();
