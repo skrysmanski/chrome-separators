@@ -1,8 +1,14 @@
-<!doctype html>
 <?php
 $VERSION = '1.2';
 $isHorizontal = isset($_GET['horz']);
+if (!$isHorizontal && !isset($_GET['vert'])) {
+  // If neither "?horz" nor "?vert", select "?vert" explicitly - or else the icon on the user's bookmark bar
+  // will have a generic icon - and not our intended favicon.
+  header("Location: /?vert");
+  exit();
+}
 ?>
+<!doctype html>
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
