@@ -79,7 +79,11 @@ if (!$isHorizontal && !isset($_GET['vert'])) {
     function refreshHash() {
       const randomKey = crypto.randomUUID();
 
-      link.setAttribute('href', `?${mode}#${randomKey}`);
+      // To reduce confusion about the random key, we add "bookmark-differentiator" in front of it.
+      // This way, users can more easily guess that this key is only used to differentiate between bookmarks.
+      const differentiatorKey = `bookmark-differentiator--${randomKey}`;
+
+      link.setAttribute('href', `?${mode}#${differentiatorKey}`);
 
       // NOTE: We use "location.replace()" here - instead of "location.hash" - so that
       //   the browser doesn't create a new browser history item for each new key.
@@ -87,7 +91,7 @@ if (!$isHorizontal && !isset($_GET['vert'])) {
       //   the page's favicon. I.e. without this, if the user drags the "me" button to their
       //   bookmarks bar, the bookmark's icon will be a generic icon - and not the actual favicon
       //   of this page (until the user clicks on the bookmark).
-      window.location.replace(`#${randomKey}`);
+      window.location.replace(`#${differentiatorKey}`);
     }
 
     refreshHash();
