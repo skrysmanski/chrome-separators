@@ -3,7 +3,12 @@ $VERSION = '1.3';
 
 header('X-Content-Type-Options: nosniff');
 
-$isHorizontal = isset($_GET['horz']);
+// NOTE: Even though "t=horz" is no longer used, there are users out there that created
+//   bookmarks when this was still in use. And Chrome periodically rescans the favicons
+//   for bookmarks. Then, if we'd drop this check for "t=horz", these users would suddenly
+//   see the vertical favicon for their horizontal separators. See #20.
+$isHorizontal = isset($_GET['horz']) || @$_GET['t'] == 'horz';
+
 if (!$isHorizontal && !isset($_GET['vert'])) {
   // If neither "?horz" nor "?vert", select "?vert" explicitly - or else the icon on the user's bookmark bar
   // will have a generic icon - and not our intended favicon.
