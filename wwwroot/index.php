@@ -12,7 +12,10 @@ $isHorizontal = isset($_GET['horz']) || @$_GET['t'] == 'horz';
 if (!$isHorizontal && !isset($_GET['vert'])) {
   // If neither "?horz" nor "?vert", select "?vert" explicitly - or else the icon on the user's bookmark bar
   // will have a generic icon - and not our intended favicon.
-  header("Location: /?vert");
+  //
+  // NOTE: We use a 301 (permanent redirect) here - instead of 302 (temporary redirect) - to indicate to
+  //   browsers that they should update their bookmarks (if they support such a feature).
+  header("Location: /?vert", true, 301);
   exit();
 }
 ?>
