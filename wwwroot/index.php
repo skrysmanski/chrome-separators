@@ -1,5 +1,5 @@
 <?php
-$VERSION = '1.3';
+$VERSION = '1.4';
 
 header('X-Content-Type-Options: nosniff');
 
